@@ -9,6 +9,6 @@
       Title="AddProfilePet">
 
     <Grid>
-        <Border Background="White" CornerRadius="30"/>
+        <Border Background="White" CornerRadius="30" Margin="2"/>
     </Grid>
 </Page>
