@@ -9,6 +9,6 @@
       Title="ProfilReg">
 
     <Grid>
-        
+        <Border Background="#ffff" CornerRadius="30"/>
     </Grid>
 </Page>
