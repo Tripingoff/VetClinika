@@ -1,0 +1,83 @@
+﻿<Page x:Class="VetClinika.Pages.Profil"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VetClinika.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="680" d:DesignWidth="880"
+      Title="Profil" Background="Transparent">
+    
+    <Border Background="Transparent" BorderThickness="0" CornerRadius="20" Width="880" Height="700">
+        <Grid Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Мои питомцы" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="36" FontWeight="SemiBold" Foreground="#259617" FontFamily="Montserrat" Margin="0 0 0 20"/>
+            <StackPanel Orientation="Horizontal" Height="280" Grid.Row="0" Margin="30 64 0 0">
+                <ListBox  Background="Transparent" BorderThickness="0" Height="280" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=1}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="Transparent" BorderThickness="0" CornerRadius="12" Width="280" Height="280" Margin="0 0 20 0">
+                                <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                    <Image Source="{Binding GetPhoto}" Width="280" Height="280"></Image>
+                                </Button>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ListBoxItem VerticalAlignment="Center" Width="280" Height="280">
+                    <Border Background="Transparent" BorderThickness="0" CornerRadius="12">
+                        <Button x:Name="Btn_Add" Width="280" Height="280" >
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/Icons/Plus Math.png" Width="100" Height="100"/>
+                                <TextBlock Text="Добавить питомца"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
+                </ListBoxItem>
+            </StackPanel>
+            <Border Style="{DynamicResource Border_Pages}" Grid.Row="1" Width="880" Height="316" VerticalAlignment="Center">
+                <Grid Width="880" Height="316">
+                    <Grid Width="820" Height="259" Background="Transparent" Margin="30 28 30 29">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="49"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="34"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Владелец" Foreground="#976215" Grid.Row="0" FontSize="32" FontFamily="Montserrat" FontWeight="SemiBold"/>
+                        <Grid Grid.Row="1">
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="Фамилия Имя Отчество:" HorizontalAlignment="Left" Margin="5 5 5 0"/>
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="{Binding }" HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="Номер телефона" HorizontalAlignment="Left" Margin="5 5 5 0"/>
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="{Binding}" HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="Электронная почта" HorizontalAlignment="Left" Margin="5 5 5 0"/>
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="{Binding}" HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="Адрес проживания" HorizontalAlignment="Left" Margin="5 5 5 0"/>
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="{Binding}" HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid Grid.Row="5">
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="Дата рождения" HorizontalAlignment="Left" Margin="5 5 5 0"/>
+                            <TextBlock Style="{DynamicResource TextBlock_Static}" Text="{Binding}" HorizontalAlignment="Right"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Page>

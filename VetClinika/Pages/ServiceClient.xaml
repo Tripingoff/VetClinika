@@ -1,0 +1,53 @@
+﻿<Page x:Class="VetClinika.Pages.ServiceClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VetClinika.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="680" d:DesignWidth="880"
+      Title="ServiceClient">
+   
+    <Border Style="{DynamicResource Border_Pages}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Style="{DynamicResource Border_Pages}" BorderBrush="#FCB54F" BorderThickness="0 0 0 2" Grid.Row="0" >
+                <Grid>
+                    <Border Background="#fff" CornerRadius="10" Width="380" Height="44" HorizontalAlignment="Right" Margin="0 0 79 0">
+                        <TextBox Style="{DynamicResource Txt_Search}" x:Name="TxtSearch" />
+                    </Border>
+                    <!--<Border Background="White" Width="44" Height="44" HorizontalAlignment="Right" Margin="15 10.5 20 10.5">-->
+                    <Button Style="{DynamicResource Button_Search}" x:Name="Btn_Search" Height="44" Width="44" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="15 0 20 0">
+                            <Image></Image>
+                        </Button>
+                    <!--</Border>-->
+                </Grid>
+            </Border>
+            <ListView x:Name="ListViewService" Grid.Row="1" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center" Padding="15" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{DynamicResource Border_Services}" Width="240" Height="280" Margin="0 0 15 15">
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="{Binding GetPhoto}" Width="120" Height="120" Margin="60 20 60 5"/>
+                                <TextBlock Text="{Binding}" Foreground="#976215" Grid.Row="0" FontSize="24" FontFamily="Montserrat" FontWeight="Medium" Margin="25 15 0 8"/>
+                                <TextBlock Text="{Binding}" Foreground="#259617" Grid.Row="0" FontSize="16" FontFamily="Montserrat" FontWeight="Regular" Margin="25 0 0 15"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Style="{DynamicResource ButtonStyle_Green}" x:Name="BtnProd" Content="Подробнее" Margin="10 10 12 10"/>
+                                    <Button Style="{DynamicResource ButtonStyle_Green}" x:Name="BtnZapise" Content="Записаться" Margin="0 10 10 10"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Border>
+</Page>
