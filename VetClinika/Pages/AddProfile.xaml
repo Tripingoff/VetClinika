@@ -9,6 +9,6 @@
       Title="AddProfile">
 
     <Grid>
-        <
+        <Border/>
     </Grid>
 </Page>
